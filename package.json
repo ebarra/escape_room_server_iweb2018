@@ -1,0 +1,24 @@
+{
+  "name": "escape_room_server_iweb2018",
+  "version": "1.0.0",
+  "description": "Server for the scape room of the IWEB subject",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebarra/escape_room_server_iweb2018.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebarra/escape_room_server_iweb2018/issues"
+  },
+  "homepage": "https://github.com/ebarra/escape_room_server_iweb2018#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "serve-favicon": "^2.5.0"
+  }
+}
