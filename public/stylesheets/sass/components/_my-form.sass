@@ -1,7 +1,7 @@
 .container
   #myform
     margin-top: 3em
-    width: 25em
+    width: 20em
     label
       opacity: .3
       display: inline-block
@@ -18,7 +18,7 @@
       font-weight: bold
       color: $maincolor
       background: transparent
-      font-size: 14px
+      font-size: .9em
       outline: 0
       padding: .5em 1.2em
       margin-bottom: 1em
@@ -50,16 +50,41 @@
       margin-top: .5em
       text-decoration: none
       text-transform: uppercase
-      width: 7em
+      width: 9em
       +transition_default
       &:hover
         +hover_scale
         +transition_default
       &.sendBtn
         background: $maincolor
-        border: 2px solid $maincolor
         color: $background
+        border: 2px solid $maincolor
+        box-shadow: 0 0 0 $secondarycolor
         &:hover
           background: $secondarycolor
-          color: $background
           border: 2px solid $secondarycolor
+          box-shadow: 0 0 30px $secondarycolor
+
+
+@media (max-width: $media10)
+  .container
+    #myform
+      margin-top: 2em
+      width: 18em
+      input, button
+        font-size: .9em
+
+
+@media (max-width: $media14)
+  .container
+    #myform
+      margin-top: 2em
+      width: 16em
+      input, button
+        font-size: .7em
+
+
+@media (max-width: $media15)
+  .container
+    #myform
+      width: 14.5em

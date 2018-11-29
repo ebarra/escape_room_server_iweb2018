@@ -2491,20 +2491,35 @@ p {
     .container .mainText h1 {
       margin-top: 0; }
 
-.clockContainer {
+@media (max-width: 1024px) {
+  .container .mainText {
+    width: 80%; } }
+
+@media (max-width: 640px) {
+  .container .mainText {
+    width: 90%;
+    font-size: .8em; } }
+
+@media (max-width: 320px) {
+  .container .mainText {
+    width: 90%;
+    font-size: .75em; } }
+
+.container .clockContainer {
+  width: 100%;
   text-align: center; }
-  .clockContainer .clock {
+  .container .clockContainer .clock {
     color: #fff;
     position: relative;
     display: inline-block;
     font-family: Digital;
     font-weight: bold;
-    font-size: 17em;
+    font-size: calc(12vh + 12vw);
     text-shadow: 0 0 10px #39FF14;
     z-index: 0; }
-    .clockContainer .clock span {
+    .container .clockContainer .clock span {
       position: relative; }
-      .clockContainer .clock span:after {
+      .container .clockContainer .clock span:after {
         content: attr(data-text);
         display: block;
         position: absolute;
@@ -2518,7 +2533,7 @@ p {
         -moz-animation: neon 1000ms ease-in-out infinite alternate;
         -ms-animation: neon 1000ms ease-in-out infinite alternate;
         -o-animation: neon 1000ms ease-in-out infinite alternate; }
-    .clockContainer .clock:before {
+    .container .clockContainer .clock:before {
       content: '';
       display: block;
       position: absolute;
@@ -2531,9 +2546,21 @@ p {
       opacity: .2;
       filter: blur(50px); }
 
+@media (max-width: 1024px) {
+  .container .clockContainer .clock {
+    font-size: calc(9vh + 9vw); } }
+
+@media (max-width: 640px) {
+  .container .clockContainer .clock {
+    font-size: calc(8vh + 8vw); } }
+
+@media (max-width: 412px) {
+  .container .clockContainer .clock {
+    font-size: calc(7vh + 7vw); } }
+
 .container #myform {
   margin-top: 3em;
-  width: 25em;
+  width: 20em;
   -ms-input-placeholder-color: #fff;
   -ms-input-placeholder-opacity: .5;
   -moz-placeholder-color: #fff;
@@ -2552,7 +2579,7 @@ p {
     font-weight: bold;
     color: #fff;
     background: transparent;
-    font-size: 14px;
+    font-size: .9em;
     outline: 0;
     padding: .5em 1.2em;
     margin-bottom: 1em;
@@ -2577,7 +2604,7 @@ p {
     margin-top: .5em;
     text-decoration: none;
     text-transform: uppercase;
-    width: 7em;
+    width: 9em;
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
     -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -2601,11 +2628,30 @@ p {
       -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
     .container #myform button.sendBtn {
       background: #fff;
+      color: #0c0e14;
       border: 2px solid #fff;
-      color: #0c0e14; }
+      box-shadow: 0 0 0 #39FF14; }
       .container #myform button.sendBtn:hover {
         background: #39FF14;
-        color: #0c0e14;
-        border: 2px solid #39FF14; }
+        border: 2px solid #39FF14;
+        box-shadow: 0 0 30px #39FF14; }
+
+@media (max-width: 640px) {
+  .container #myform {
+    margin-top: 2em;
+    width: 18em; }
+    .container #myform input, .container #myform button {
+      font-size: .9em; } }
+
+@media (max-width: 360px) {
+  .container #myform {
+    margin-top: 2em;
+    width: 16em; }
+    .container #myform input, .container #myform button {
+      font-size: .7em; } }
+
+@media (max-width: 320px) {
+  .container #myform {
+    width: 14.5em; } }
 
 /*# sourceMappingURL=style.css.map */
