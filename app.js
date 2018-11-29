@@ -26,10 +26,10 @@ app.use(require('node-sass-middleware')({
   dest: path.join(__dirname, 'public'),
   indentedSyntax: true,
   outputStyle: 'extended',
-  debug: true,
   sourceMap: true
 }));
-//outputStyle: 'compressed'
+//outputStyle: 'compressed' --> compress style
+//debug: true --> to show errors
 //indentedSyntax: true --> to read .sass files
 
 
