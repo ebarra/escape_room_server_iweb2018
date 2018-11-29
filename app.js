@@ -18,16 +18,19 @@ const app = express();
 
 app.use(logger('dev'));
 app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({extended: true})); // support encoded bodies
+app.use(bodyParser.urlencoded({extended: false})); // support encoded bodies
 
 
 app.use(require('node-sass-middleware')({
-  src: path.join(__dirname, 'public/stylesheets/sass'),
-  dest: path.join(__dirname, 'public/stylesheets'),
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
   indentedSyntax: true,
-  outputStyle: 'extended', //'compressed'
+  outputStyle: 'extended',
+  debug: true,
   sourceMap: true
 }));
+//outputStyle: 'compressed'
+//indentedSyntax: true --> to read .sass files
 
 
 app.set('views', path.join(__dirname, 'views'));
