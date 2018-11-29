@@ -23,11 +23,12 @@ router.post('/code', function (req, res, next) {
 router.post('/check', function (req, res, next) {
   var key = req.body.key;
   var code = req.body.code;
+  //console.log("PIDE CODIGO de ", key, code);
 
   const hash = crypto.createHmac('sha256', secret)
     .update(req.body.key)
     .digest('hex');
-  console.log(hash);
+  //console.log(hash);
   const rightcode = hash.slice(-code_length);
   if (code === rightcode) {
     res.json({

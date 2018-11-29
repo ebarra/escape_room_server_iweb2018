@@ -41,7 +41,7 @@ hbs.registerPartials(path.join(__dirname, 'views/partials'));
 
 
 // default value for title local
-app.locals.title = 'The Bomb!';
+app.locals.title = 'ESC: The Bomb!';
 
 
 // routes

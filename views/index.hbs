@@ -1,23 +1,33 @@
 
-  BOMBA!!
-  <div id="mycontent">
-    <div id="retry" style="display:none;">
-      Código no válido, sigue intentándolo!
-    </div>
-    <form id="myform" method="POST" action="/check">
-      Clave:<br>
-      <input id="mykey" type="text" name="key"/><br>
-      Código:<br>
-      <input id="mycode" type="text" name="code"/>
-      <input type="submit" value="Enviar" />
-    </form>
-  </div>
-  <div id="myprize" style="display:none;">
-    PREMIO!!
-  </div>
 
-
-  <input id="mytest" type="button" value="Get Code"/>
+<div class="mainText">
+  <h1>Título</h1>
+  <p>
+    Lorem fistrum está la cosa muy malar se calle ustée jarl diodenoo ese que llega no te digo trigo por no llamarte Rodrigor apetecan a wan.
+    La caidita no puedor fistro qué dise usteer al ataquerl. Tiene musho peligro fistro amatomaa la caidita por la gloria de mi madre papaar papaar llevame al sircoo a peich.
+    Se calle ustée por la gloria de mi madre llevame al sircoo no te digo trigo por no llamarte Rodrigor.
+  </p>
+</div>
 
 
 {{> clock}}
+
+
+<div id="mycontent">
+  <div id="retry" style="display:none;">
+    Código no válido, sigue intentándolo!
+  </div>
+  <form id="myform" method="POST" action="/check">
+    {{!-- <label for="">Clave:</label> --}}
+    <input id="mykey" type="text" name="key" placeholder="Introduce tu clave"/>
+    {{!-- <label for="">Código:</label> --}}
+    <input id="mycode" type="text" name="code" placeholder="Introduce tu código"/>
+    <button class="sendBtn" type="submit">Enviar</button>
+  </form>
+</div>
+<div id="myprize" style="display:none;">
+  PREMIO!!
+</div>
+
+
+<button id="mytest" type="button" style="visibility:hidden;">Get Code</button>

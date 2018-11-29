@@ -1,0 +1,59 @@
+@-webkit-keyframes neon {
+  from {
+    text-shadow: 0 0 10px $secondarycolor;
+  }
+  to {
+    text-shadow: 0 0 25px $secondarycolor;
+  }
+}
+
+@-moz-keyframes neon {
+  from {
+    text-shadow: 0 0 10px $secondarycolor;
+  }
+  to {
+    text-shadow: 0 0 25px $secondarycolor;
+  }
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 10px $secondarycolor;
+  }
+  to {
+    text-shadow: 0 0 25px $secondarycolor;
+  }
+}
+
+
+/*------------------------------------------------------------------------------------------------------------*/
+
+
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 5px $maincolor, 0 0 10px $maincolor, 0 0 20px $secondarycolor, 0 0 40px $secondarycolor;
+  }
+  to {
+    text-shadow: 0 0 5px $maincolor, 0 0 10px $maincolor, 0 0 15px $secondarycolor, 0 0 30px $secondarycolor;
+  }
+}
+
+@-moz-keyframes neon2 {
+  from {
+    text-shadow: 0 0 5px $maincolor, 0 0 10px $maincolor, 0 0 20px $secondarycolor, 0 0 40px $secondarycolor;
+  }
+  to {
+    text-shadow: 0 0 5px $maincolor, 0 0 10px $maincolor, 0 0 15px $secondarycolor, 0 0 30px $secondarycolor;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 5px $maincolor, 0 0 10px $maincolor, 0 0 20px $secondarycolor, 0 0 40px $secondarycolor;
+    //text-shadow: 0 0 10px $maincolor, 0 0 20px $maincolor, 0 0 30px $maincolor, 0 0 40px $secondarycolor, 0 0 70px $secondarycolor, 0 0 80px $secondarycolor, 0 0 100px $secondarycolor, 0 0 150px $secondarycolor;
+  }
+  to {
+    text-shadow: 0 0 5px $maincolor, 0 0 10px $maincolor, 0 0 15px $secondarycolor, 0 0 30px $secondarycolor;
+    //text-shadow: 0 0 5px $maincolor, 0 0 10px $maincolor, 0 0 15px $maincolor, 0 0 20px $secondarycolor, 0 0 35px $secondarycolor, 0 0 40px $secondarycolor, 0 0 50px $secondarycolor, 0 0 75px $secondarycolor;
+  }
+}

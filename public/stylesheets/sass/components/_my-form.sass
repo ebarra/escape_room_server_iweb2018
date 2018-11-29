@@ -1,0 +1,65 @@
+.container
+  #myform
+    margin-top: 3em
+    width: 25em
+    label
+      opacity: .3
+      display: inline-block
+      margin-bottom: 10px
+      text-align: center
+      font-weight: bold
+      //width: 100%
+      margin-top: 1em
+      &:first-child
+        margin-top: 0
+
+    input, button
+      font-family: Courier New, Courier, monospace
+      font-weight: bold
+      color: $maincolor
+      background: transparent
+      font-size: 14px
+      outline: 0
+      padding: .5em 1.2em
+      margin-bottom: 1em
+      width: 100%
+      border: 2px solid $maincolor
+      border-radius: 2em
+    ::-webkit-input-placeholder /* Chrome/Opera/Safari */
+      color: $maincolor
+      opacity: .5
+    ::-moz-placeholder /* Firefox 19+ */
+      color: $maincolor
+      opacity: .5
+    :-ms-input-placeholder /* IE 10+ */
+      color: $maincolor
+      opacity: .5
+    :-moz-placeholder /* Firefox 18- */
+      color: $maincolor
+      opacity: .5
+
+    button
+      border-radius: 2em
+      color: $maincolor
+      cursor: pointer
+      display: block
+      font-size: 1em
+      font-weight: bold
+      padding: .5em
+      margin: 0 auto
+      margin-top: .5em
+      text-decoration: none
+      text-transform: uppercase
+      width: 7em
+      +transition_default
+      &:hover
+        +hover_scale
+        +transition_default
+      &.sendBtn
+        background: $maincolor
+        border: 2px solid $maincolor
+        color: $background
+        &:hover
+          background: $secondarycolor
+          color: $background
+          border: 2px solid $secondarycolor
