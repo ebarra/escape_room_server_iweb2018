@@ -2520,7 +2520,7 @@ p {
       display: none;
       position: absolute;
       width: max-content;
-      top: .8em;
+      top: .5em;
       left: 50%;
       -webkit-transform: translateX(-50%);
       -moz-transform: translateX(-50%);
@@ -2541,7 +2541,7 @@ p {
     width: 90%;
     font-size: .8em; }
   .container #mycontent #retry, .container #mycontent #myprize {
-    top: 1.3em;
+    top: 1em;
     font-size: .8em; } }
 
 @media (max-width: 320px) {
@@ -2639,7 +2639,7 @@ p {
     font-size: calc(7vh + 7vw); } }
 
 .container form {
-  margin-top: 3em;
+  margin-top: 2.5em;
   width: 20em;
   -ms-input-placeholder-color: #fff;
   -ms-input-placeholder-opacity: .5;
