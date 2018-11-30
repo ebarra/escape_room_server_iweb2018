@@ -10,7 +10,18 @@
     margin-bottom: 2em
     h1
       margin-top: 0
-
+    &.centered
+      text-align: center
+      margin-bottom: 0
+      h1
+        margin-bottom: 0
+    &.neoned
+      position: relative
+      color: $maincolor
+      //color: $secondarycolor
+      +prefix(animation, neon 1000ms ease-in-out infinite alternate)
+      &:before
+        +neoned_before
 
 
 @media (max-width: $media4)

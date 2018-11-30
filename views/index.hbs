@@ -1,33 +1,31 @@
 
+{{#if started}}
 
-<div class="mainText">
-  <h1>Título</h1>
-  <p>
-    Lorem fistrum está la cosa muy malar se calle ustée jarl diodenoo ese que llega no te digo trigo por no llamarte Rodrigor apetecan a wan.
-    La caidita no puedor fistro qué dise usteer al ataquerl. Tiene musho peligro fistro amatomaa la caidita por la gloria de mi madre papaar papaar llevame al sircoo a peich.
-    Se calle ustée por la gloria de mi madre llevame al sircoo no te digo trigo por no llamarte Rodrigor.
-  </p>
-</div>
-
-
-{{> clock}}
-
-
-<div id="mycontent">
-  <div id="retry" style="display:none;">
-    Código no válido, sigue intentándolo!
+  <div class="mainText">
+    <h1>{{config.mainTitle}}</h1>
+    <p>{{config.mainText}}</p>
   </div>
-  <form id="myform" method="POST" action="/check">
-    {{!-- <label for="">Clave:</label> --}}
-    <input id="mykey" type="text" name="key" placeholder="Introduce tu clave"/>
-    {{!-- <label for="">Código:</label> --}}
-    <input id="mycode" type="text" name="code" placeholder="Introduce tu código"/>
-    <button class="sendBtn" type="submit">Desactivar</button>
-  </form>
-</div>
-<div id="myprize" style="display:none;">
-  PREMIO!!
-</div>
 
+  {{> clock}}
 
-<button id="mytest" type="button" style="visibility:hidden;">Get Code</button>
+  <div id="mycontent">
+    <div id="retry" style="display:none;">{{config.feedback}}</div>
+    <form id="myform" method="POST" action="/check">
+      {{!-- <label for="">Clave:</label> --}}
+      <input id="mykey" type="text" name="key" placeholder="{{config.placeholder1}}"/>
+      {{!-- <label for="">Código:</label> --}}
+      <input id="mycode" type="text" name="code" placeholder="{{config.placeholder2}}"/>
+      <button class="sendBtn" type="submit">{{config.btnSend}}</button>
+    </form>
+  </div>
+  <div id="myprize" style="display:none;">{{config.win}}</div>
+
+  <button id="mytest" type="button" style="visibility:hidden;">Get Code</button>
+
+{{else}}
+
+  <div class="mainText centered neoned">
+    <h1>{{config.mainTitle_noStarted}}</h1>
+  </div>
+
+{{/if}}

@@ -1,0 +1,30 @@
+.container
+  .message
+    position: relative
+    width: 40%
+    text-align: center
+    font-size: 2em
+    color: $maincolor
+    //color: $secondarycolor
+    z-index: 0
+    +prefix(animation, neon 1000ms ease-in-out infinite alternate)
+    &:before
+      +neoned_before
+
+
+@media (max-width: $media1)
+  .container
+    .message
+      width: 60%
+
+
+@media (max-width: $media2)
+  .container
+    .message
+      width: 80%
+
+
+@media (max-width: $media3)
+  .container
+    .message
+      width: 100%

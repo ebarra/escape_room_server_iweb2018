@@ -1,0 +1,12 @@
+
+
+
+{{#if started}}
+  <div class="message">{{config.adminMessage}}</div>
+{{else}}
+  <form method="POST" action="/admin">
+    <input id="adminPassword" type="password" name="adminPassword"/>
+    <button class="sendBtn" type="submit">{{config.btnSendAdmin}}</button>
+    {{!-- <button class="stopBtn" type="submit">{{config.btnStopAdmin}}</button> --}}
+  </form>
+{{/if}}

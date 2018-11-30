@@ -2490,6 +2490,30 @@ p {
     margin-bottom: 2em; }
     .container .mainText h1 {
       margin-top: 0; }
+    .container .mainText.centered {
+      text-align: center;
+      margin-bottom: 0; }
+      .container .mainText.centered h1 {
+        margin-bottom: 0; }
+    .container .mainText.neoned {
+      position: relative;
+      color: #fff;
+      animation: neon 1000ms ease-in-out infinite alternate;
+      -webkit-animation: neon 1000ms ease-in-out infinite alternate;
+      -moz-animation: neon 1000ms ease-in-out infinite alternate;
+      -ms-animation: neon 1000ms ease-in-out infinite alternate;
+      -o-animation: neon 1000ms ease-in-out infinite alternate; }
+      .container .mainText.neoned:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #39FF14;
+        opacity: .4;
+        filter: blur(60px); }
 
 @media (max-width: 1024px) {
   .container .mainText {
@@ -2504,6 +2528,42 @@ p {
   .container .mainText {
     width: 90%;
     font-size: .75em; } }
+
+.container .message {
+  position: relative;
+  width: 40%;
+  text-align: center;
+  font-size: 2em;
+  color: #fff;
+  z-index: 0;
+  animation: neon 1000ms ease-in-out infinite alternate;
+  -webkit-animation: neon 1000ms ease-in-out infinite alternate;
+  -moz-animation: neon 1000ms ease-in-out infinite alternate;
+  -ms-animation: neon 1000ms ease-in-out infinite alternate;
+  -o-animation: neon 1000ms ease-in-out infinite alternate; }
+  .container .message:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #39FF14;
+    opacity: .4;
+    filter: blur(60px); }
+
+@media (max-width: 1366px) {
+  .container .message {
+    width: 60%; } }
+
+@media (max-width: 1280px) {
+  .container .message {
+    width: 80%; } }
+
+@media (max-width: 1200px) {
+  .container .message {
+    width: 100%; } }
 
 .container .clockContainer {
   width: 100%;
@@ -2558,23 +2618,23 @@ p {
   .container .clockContainer .clock {
     font-size: calc(7vh + 7vw); } }
 
-.container #myform {
+.container form {
   margin-top: 3em;
   width: 20em;
   -ms-input-placeholder-color: #fff;
   -ms-input-placeholder-opacity: .5;
   -moz-placeholder-color: #fff;
   -moz-placeholder-opacity: .5; }
-  .container #myform label {
+  .container form label {
     opacity: .3;
     display: inline-block;
     margin-bottom: 10px;
     text-align: center;
     font-weight: bold;
     margin-top: 1em; }
-    .container #myform label:first-child {
+    .container form label:first-child {
       margin-top: 0; }
-  .container #myform input, .container #myform button {
+  .container form input, .container form button, .container form textarea, .container form select {
     font-family: Courier New, Courier, monospace;
     font-weight: bold;
     color: #fff;
@@ -2586,13 +2646,16 @@ p {
     width: 100%;
     border: 2px solid #fff;
     border-radius: 2em; }
-  .container #myform ::-webkit-input-placeholder {
+    .container form input:-webkit-autofill, .container form input:-webkit-autofill:hover, .container form input:-webkit-autofill:focus, .container form button:-webkit-autofill, .container form button:-webkit-autofill:hover, .container form button:-webkit-autofill:focus, .container form textarea:-webkit-autofill, .container form textarea:-webkit-autofill:hover, .container form textarea:-webkit-autofill:focus, .container form select:-webkit-autofill, .container form select:-webkit-autofill:hover, .container form select:-webkit-autofill:focus {
+      -webkit-text-fill-color: #fff;
+      -webkit-box-shadow: 0 0 0px 1000px #0c0e14 inset; }
+  .container form ::-webkit-input-placeholder {
     color: #fff;
     opacity: .5; }
-  .container #myform ::-moz-placeholder {
+  .container form ::-moz-placeholder {
     color: #fff;
     opacity: .5; }
-  .container #myform button {
+  .container form button {
     border-radius: 2em;
     color: #fff;
     cursor: pointer;
@@ -2610,7 +2673,7 @@ p {
     -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
     -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
     -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
-    .container #myform button:hover {
+    .container form button:hover {
       -webkit-transform: scale(1.1, 1.1);
       -moz-transform: scale(1.1, 1.1);
       -ms-transform: scale(1.1, 1.1);
@@ -2626,32 +2689,32 @@ p {
       -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
       -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
       -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
-    .container #myform button.sendBtn {
+    .container form button.sendBtn {
       background: #fff;
       color: #0c0e14;
       border: 2px solid #fff;
       box-shadow: 0 0 0 #39FF14; }
-      .container #myform button.sendBtn:hover {
+      .container form button.sendBtn:hover {
         background: #39FF14;
         border: 2px solid #39FF14;
         box-shadow: 0 0 30px #39FF14; }
 
 @media (max-width: 640px) {
-  .container #myform {
+  .container form {
     margin-top: 2em;
     width: 18em; }
-    .container #myform input, .container #myform button {
+    .container form input, .container form button {
       font-size: .9em; } }
 
 @media (max-width: 360px) {
-  .container #myform {
+  .container form {
     margin-top: 2em;
     width: 16em; }
-    .container #myform input, .container #myform button {
+    .container form input, .container form button {
       font-size: .7em; } }
 
 @media (max-width: 320px) {
-  .container #myform {
+  .container form {
     width: 14.5em; } }
 
 /*# sourceMappingURL=style.css.map */
