@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         console.log(res);
         if (res.status === "ok") {
-          document.getElementById("mycontent").style.display = 'none';
+          document.getElementById("myform").style.display = 'none';
           document.getElementById("myprize").style.display = 'block';
         } else {
           document.getElementById("retry").style.display = 'block';

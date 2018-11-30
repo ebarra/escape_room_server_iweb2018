@@ -2514,6 +2514,23 @@ p {
         background: #39FF14;
         opacity: .4;
         filter: blur(60px); }
+  .container #mycontent {
+    position: relative; }
+    .container #mycontent #retry, .container #mycontent #myprize {
+      display: none;
+      position: absolute;
+      width: max-content;
+      top: .8em;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%); }
+    .container #mycontent #retry {
+      color: #F25652; }
+    .container #mycontent #myprize {
+      color: #00a388; }
 
 @media (max-width: 1024px) {
   .container .mainText {
@@ -2522,6 +2539,9 @@ p {
 @media (max-width: 640px) {
   .container .mainText {
     width: 90%;
+    font-size: .8em; }
+  .container #mycontent #retry, .container #mycontent #myprize {
+    top: 1.3em;
     font-size: .8em; } }
 
 @media (max-width: 320px) {
@@ -2701,14 +2721,12 @@ p {
 
 @media (max-width: 640px) {
   .container form {
-    margin-top: 2em;
     width: 18em; }
     .container form input, .container form button {
       font-size: .9em; } }
 
 @media (max-width: 360px) {
   .container form {
-    margin-top: 2em;
     width: 16em; }
     .container form input, .container form button {
       font-size: .7em; } }

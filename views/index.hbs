@@ -9,16 +9,16 @@
   {{> clock}}
 
   <div id="mycontent">
-    <div id="retry" style="display:none;">{{config.feedback}}</div>
+
+    <p id="retry">{{config.feedback}}</p>
+    <p id="myprize">{{config.win}}</p>
+
     <form id="myform" method="POST" action="/check">
-      {{!-- <label for="">Clave:</label> --}}
       <input id="mykey" type="text" name="key" placeholder="{{config.placeholder1}}"/>
-      {{!-- <label for="">Código:</label> --}}
       <input id="mycode" type="text" name="code" placeholder="{{config.placeholder2}}"/>
       <button class="sendBtn" type="submit">{{config.btnSend}}</button>
     </form>
   </div>
-  <div id="myprize" style="display:none;">{{config.win}}</div>
 
   <button id="mytest" type="button" style="visibility:hidden;">Get Code</button>
 
