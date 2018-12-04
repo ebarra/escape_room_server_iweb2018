@@ -40,10 +40,23 @@
       color: $green
 
 
+@media (max-width: $media2) and (orientation: landscape)
+  .container
+    .mainText
+      width: 80%
+
+
 @media (max-width: $media4)
   .container
     .mainText
       width: 80%
+
+
+@media (max-width: $media5) and (orientation: landscape)
+  .container
+    width: 90%
+    height: max-content
+    margin: 3em auto
 
 
 @media (max-width: $media10)
@@ -57,7 +70,7 @@
         font-size: .8em
 
 
-@media (max-width: $media15)
+@media (max-width: $media14)
   .container
     .mainText
       width: 90%
