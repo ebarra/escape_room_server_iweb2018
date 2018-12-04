@@ -1,7 +1,7 @@
 /*APP CONTENTS */
 const config = {
-  mainTitle_noStarted: `La prueba no ha comenzado`,
-  adminMessage: `La prueba ha comenzado`,
+  noStarted: `La prueba no ha comenzado`,
+  started: `La prueba ha comenzado`,
   btnSendAdmin: `Start`,
   btnStopAdmin: `Stop`,
   mainTitle: `Título`,
