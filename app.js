@@ -11,16 +11,18 @@ const hbs = require('hbs');
 const logger = require('morgan');
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
+var cors = require('cors')
+
 
 const app = express();
 
+app.use(cors())
 //Middlewares
 
 app.use(logger('dev'));
-app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({extended: false})); // support encoded bodies
-
-
+app.use(bodyParser.json()); // support json encoded bodies
+ 
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
