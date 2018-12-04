@@ -40,7 +40,6 @@ window.addEventListener("load", function () {
 
   document.getElementById("myform").addEventListener("submit", function (event) {
     event.preventDefault();
-
     sendData("/check");
   });
 

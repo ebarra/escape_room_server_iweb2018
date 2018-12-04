@@ -1,16 +1,18 @@
 
+<div class="container">
 
+  {{#if started}}
+    <div class="message">{{config.started}}</div>
+    <form method="POST" action="/admin">
+      <input id="adminPassword" type="password" name="adminPassword"/>
+      <button class="stopBtn" type="submit">{{config.btnStopAdmin}}</button>
+    </form>
+  {{else}}
+    <div class="message">{{config.noStarted}}</div>
+    <form method="POST" action="/admin">
+      <input id="adminPassword" type="password" name="adminPassword"/>
+      <button class="sendBtn" type="submit">{{config.btnSendAdmin}}</button>
+    </form>
+  {{/if}}
 
-{{#if started}}
-  <div class="message">{{config.started}}</div>
-  <form method="POST" action="/admin">
-    <input id="adminPassword" type="password" name="adminPassword"/>
-    <button class="stopBtn" type="submit">{{config.btnStopAdmin}}</button>
-  </form>
-{{else}}
-  <div class="message">{{config.noStarted}}</div>
-  <form method="POST" action="/admin">
-    <input id="adminPassword" type="password" name="adminPassword"/>
-    <button class="sendBtn" type="submit">{{config.btnSendAdmin}}</button>
-  </form>
-{{/if}}
+</div>

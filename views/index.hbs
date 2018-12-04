@@ -1,31 +1,38 @@
+<div class="container">
 
-{{#if started}}
+  {{#if started}}
 
-  <div class="mainText">
-    <h1>{{config.mainTitle}}</h1>
-    <p>{{config.mainText}}</p>
-  </div>
+    <div class="mainText">
+      <h1>{{config.mainTitle}}</h1>
+      <p>{{config.mainText}}</p>
+      <p class="repository">{{config.repositoryText}}<a class="" target="_blank" href="{{config.repository}}">GitHub</a></p>
+    </div>
+    {{> clock}}
 
-  {{> clock}}
+    <div id="mycontent">
 
-  <div id="mycontent">
+      <p id="retry">{{config.feedback}}</p>
+      <p id="myprize">{{config.win}}</p>
 
-    <p id="retry">{{config.feedback}}</p>
-    <p id="myprize">{{config.win}}</p>
+      <form id="myform" method="POST" action="/check">
+        <input id="mykey" type="text" name="key" placeholder="{{config.placeholder1}}"/>
+        <input id="mycode" type="text" name="code" placeholder="{{config.placeholder2}}"/>
+        <button class="sendBtn" type="submit">{{config.btnSend}}</button>
+      </form>
+    </div>
 
-    <form id="myform" method="POST" action="/check">
-      <input id="mykey" type="text" name="key" placeholder="{{config.placeholder1}}"/>
-      <input id="mycode" type="text" name="code" placeholder="{{config.placeholder2}}"/>
-      <button class="sendBtn" type="submit">{{config.btnSend}}</button>
-    </form>
-  </div>
+    <button id="mytest" type="button" style="visibility:hidden;">Get Code</button>
 
-  <button id="mytest" type="button" style="visibility:hidden;">Get Code</button>
+  {{else}}
 
-{{else}}
+    <div class="mainText centered neoned">
+      <h1>{{config.noStarted}}</h1>
+    </div>
 
-  <div class="mainText centered neoned">
-    <h1>{{config.noStarted}}</h1>
-  </div>
+  {{/if}}
 
-{{/if}}
+</div>
+
+
+
+<script src="/javascripts/script.js"></script>

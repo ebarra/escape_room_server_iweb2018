@@ -2514,6 +2514,8 @@ p {
         background: #39FF14;
         opacity: .4;
         filter: blur(60px); }
+    .container .mainText .repository {
+      margin-top: 1em; }
   .container #mycontent {
     position: relative; }
     .container #mycontent #retry, .container #mycontent #myprize {

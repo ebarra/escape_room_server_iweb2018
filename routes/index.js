@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const secret = 'ab';
 const code_length = 2; //number of characters that this app manages
 const {config} = require('../config/config');
-let started = false;
+let started = true;
 
 /* GET home page */
 router.get('/', (req, res, next) => {
