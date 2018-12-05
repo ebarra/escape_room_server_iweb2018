@@ -10,10 +10,14 @@
       font-weight: bold
       //font-size: 17em
       //font-size: calc(7vh + 7vw + 7em)
-      font-size: calc(12vh + 12vw)
+      font-size: calc(11.5vh + 11.5vw)
       text-shadow: 0 0 10px $secondarycolor
       z-index: 0
       //+prefix(animation, neon 1500ms ease-in-out infinite alternate)
+      #minus
+        display: none
+      &#explosion
+        display: none
       span
         position: relative
         &:after
@@ -38,24 +42,60 @@
         z-index: -2
         opacity: .2
         filter: blur(50px)
+      &.red
+        text-shadow: 0 0 10px $red
+        span
+          &:after
+            color: $red
+            +prefix(animation, neonRed 1000ms ease-in-out infinite alternate)
+        &:before
+          background: $red
 
 
 @media (max-width: $media4)
   .container
     .clockContainer
       .clock
-        font-size: calc(9vh + 9vw)
+        font-size: calc(8vh + 8.5vw)
+
+
+@media (max-width: $media5) and (orientation: landscape)
+  .container
+    .clockContainer
+      .clock
+        font-size: calc(13vh + 13vw)
+
+
+@media (max-width: $media7)
+  .container
+    .clockContainer
+      .clock
+        font-size: calc(7.5vh + 7.5vw)
+
+
+@media (max-width: $media7) and (orientation: landscape)
+  .container
+    .clockContainer
+      .clock
+        font-size: calc(12vh + 12vw)
 
 
 @media (max-width: $media10)
   .container
     .clockContainer
       .clock
-        font-size: calc(8vh + 8vw)
+        font-size: calc(7.5vh + 7.5vw)
+
+
+@media (max-width: $media10) and (orientation: landscape)
+  .container
+    .clockContainer
+      .clock
+        font-size: calc(12vh + 12vw)
 
 
 @media (max-width: $media13)
   .container
     .clockContainer
       .clock
-        font-size: calc(7vh + 7vw)
+        font-size: calc(6.5vh + 6.5vw)

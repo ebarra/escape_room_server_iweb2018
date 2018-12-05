@@ -14,9 +14,10 @@ const config = {
   placeholder1: `Introduce tu clave`,
   placeholder2: `Introduce tu código`,
   repositoryText: `En este repositorio encontrarás el código para desactivar la bomba: `,
-  repository: `https://www.google.com`,
-  durationMins: 120,
-  penaltyMins: 2
+  boomRepository: `https://www.google.com`,
+  help: `http://vishub.org/scormfiles/279.full`,
+  durationSecs: 7200,
+  penaltySecs: 120
 }
 
 

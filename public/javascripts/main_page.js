@@ -10,7 +10,7 @@ fetch('http://example.com/movies.json')
 
 
 
-window.addEventListener("load", function () {
+//window.addEventListener("load", function () {
 
     function sendData(url) {
       var data = {};
@@ -29,7 +29,10 @@ window.addEventListener("load", function () {
             document.getElementById("myform").style.display = 'none';
             document.getElementById("myprize").style.display = 'block';
           } else {
-            document.getElementById("retry").style.display = 'block';
+            //document.getElementById("retry").style.display = 'block';
+            //setTimeout(()=> {document.getElementById("retry").style.display = 'none'}, 2500);
+            document.getElementById("retry").classList.add('appear');
+            setTimeout(()=>{document.getElementById("retry").classList.remove('appear')}, 3000);
           }
         } else {
           //console.log(res);
@@ -56,8 +59,17 @@ window.addEventListener("load", function () {
     var countdown = new Audio('https://res.cloudinary.com/dvxsqwrwm/video/upload/v1544008518/countdown_reduce.mp3');
     var tenSecs = new Audio('https://res.cloudinary.com/dbrbgqgfg/video/upload/v1544005322/tensecs_nhtj8r.mp3');
 
-    countdown.currentTime = 5;
-    countdown.play();
+    // countdown.addEventListener('loadedmetadata', ()=>{
+    //   console.log("Metadata");
+    //   this.currentTime = 55;
+    // })
+    // setTimeout(()=>{countdown.play().then(()=>{
+    //   console.log("CHACHI");
+    // }).catch((e)=>{
+    //   console.log(e);
+    // });}, 1000);
+
+    document.getElementById("volumeBtn").style.display = ('none');
 
     document.getElementById("volumeBtn").addEventListener('click', () => {
       let sounds = [countdown, tenSecs];
@@ -71,4 +83,4 @@ window.addEventListener("load", function () {
     });
 
 
-});
+//});

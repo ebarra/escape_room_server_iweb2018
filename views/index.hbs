@@ -7,7 +7,7 @@
     <div class="mainText">
       <h1>{{config.mainTitle}}</h1>
       <p>{{config.mainText}}</p>
-      <p class="repository">{{config.repositoryText}}<a class="" target="_blank" href="{{config.repository}}">GitHub</a></p>
+      <p class="repository">{{config.repositoryText}}<a class="" target="_blank" href="{{config.boomRepository}}">GitHub</a></p>
     </div>
     {{> clock}}
 
@@ -37,6 +37,10 @@
 
 
 {{#if started}}
+  <script type="text/javascript">
+    var rem_time = {{rem_time}};
+  </script>
   <script src="/javascripts/close_window.js"></script>
   <script src="/javascripts/main_page.js"></script>
+  <script src="/javascripts/chrono.js"></script>
 {{/if}}

@@ -5,12 +5,15 @@ const secret = 'ab';
 const code_length = 2; //number of characters that this app manages
 const {config} = require('../config/config');
 var started = false;
-var chrono;
+var start_time = new Date();
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  
-  res.render('index', {started, config});
+  ///calc remaining time
+  const now = new Date();
+  const diff = now - start_time;
+  const rem_time = Math.floor(config.durationSecs - diff/1000);
+  res.render('index', {started, config, rem_time});
 });
 
 /* admin page */
@@ -21,6 +24,7 @@ router.get('/admin', (req, res, next) => {
 router.post('/admin', (req, res, next) => {
   if(req.body.adminPassword === process.env.CODE) {
     started = !started;
+    start_time = new Date();
   }
   res.redirect('/');
 });

@@ -2361,6 +2361,50 @@
   to {
     text-shadow: 0 0 25px #39FF14; } }
 
+@-webkit-keyframes neonRed {
+  from {
+    text-shadow: 0 0 10px #F25652; }
+  to {
+    text-shadow: 0 0 25px #F25652; } }
+
+@-moz-keyframes neonRed {
+  from {
+    text-shadow: 0 0 10px #F25652; }
+  to {
+    text-shadow: 0 0 25px #F25652; } }
+
+@keyframes neonRed {
+  from {
+    text-shadow: 0 0 10px #F25652; }
+  to {
+    text-shadow: 0 0 25px #F25652; } }
+
+/*------------------------------------------------------------------------------------------------------------*/
+@keyframes appear {
+  from {
+    transform: scale(0) translateX(-50%);
+    -webkit-transform: scale(0) translateX(-50%);
+    -moz-transform: scale(0) translateX(-50%);
+    -ms-transform: scale(0) translateX(-50%);
+    -o-transform: scale(0) translateX(-50%);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -moz-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -ms-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -o-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(-50%);
+    -webkit-transform: scale(1) translateX(-50%);
+    -moz-transform: scale(1) translateX(-50%);
+    -ms-transform: scale(1) translateX(-50%);
+    -o-transform: scale(1) translateX(-50%);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -moz-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -ms-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -o-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); } }
+
 /*------------------------------------------------------------------------------------------------------------*/
 @-webkit-keyframes neon2 {
   from {
@@ -2544,16 +2588,23 @@ p {
   .container #mycontent {
     position: relative; }
     .container #mycontent #retry, .container #mycontent #myprize {
-      display: none;
+      opacity: 0;
       position: absolute;
       width: max-content;
       top: .5em;
       left: 50%;
-      -webkit-transform: translateX(-50%);
-      -moz-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      -o-transform: translateX(-50%);
-      transform: translateX(-50%); }
+      transform-origin: left top;
+      transform: scale(1) translateX(-50%);
+      -webkit-transform: scale(1) translateX(-50%);
+      -moz-transform: scale(1) translateX(-50%);
+      -ms-transform: scale(1) translateX(-50%);
+      -o-transform: scale(1) translateX(-50%); }
+      .container #mycontent #retry.appear, .container #mycontent #myprize.appear {
+        animation: appear 1500ms 2 alternate;
+        -webkit-animation: appear 1500ms 2 alternate;
+        -moz-animation: appear 1500ms 2 alternate;
+        -ms-animation: appear 1500ms 2 alternate;
+        -o-animation: appear 1500ms 2 alternate; }
     .container #mycontent #retry {
       color: #F25652; }
     .container #mycontent #myprize {
@@ -2568,6 +2619,8 @@ p {
     width: 80%; } }
 
 @media (max-width: 980px) and (orientation: landscape) {
+  body {
+    height: max-content; }
   .container {
     width: 90%;
     height: max-content;
@@ -2631,9 +2684,13 @@ p {
     display: inline-block;
     font-family: Digital;
     font-weight: bold;
-    font-size: calc(12vh + 12vw);
+    font-size: calc(11.5vh + 11.5vw);
     text-shadow: 0 0 10px #39FF14;
     z-index: 0; }
+    .container .clockContainer .clock #minus {
+      display: none; }
+    .container .clockContainer .clock#explosion {
+      display: none; }
     .container .clockContainer .clock span {
       position: relative; }
       .container .clockContainer .clock span:after {
@@ -2662,18 +2719,45 @@ p {
       z-index: -2;
       opacity: .2;
       filter: blur(50px); }
+    .container .clockContainer .clock.red {
+      text-shadow: 0 0 10px #F25652; }
+      .container .clockContainer .clock.red span:after {
+        color: #F25652;
+        animation: neonRed 1000ms ease-in-out infinite alternate;
+        -webkit-animation: neonRed 1000ms ease-in-out infinite alternate;
+        -moz-animation: neonRed 1000ms ease-in-out infinite alternate;
+        -ms-animation: neonRed 1000ms ease-in-out infinite alternate;
+        -o-animation: neonRed 1000ms ease-in-out infinite alternate; }
+      .container .clockContainer .clock.red:before {
+        background: #F25652; }
 
 @media (max-width: 1024px) {
   .container .clockContainer .clock {
-    font-size: calc(9vh + 9vw); } }
+    font-size: calc(8vh + 8.5vw); } }
+
+@media (max-width: 980px) and (orientation: landscape) {
+  .container .clockContainer .clock {
+    font-size: calc(13vh + 13vw); } }
+
+@media (max-width: 812px) {
+  .container .clockContainer .clock {
+    font-size: calc(7.5vh + 7.5vw); } }
+
+@media (max-width: 812px) and (orientation: landscape) {
+  .container .clockContainer .clock {
+    font-size: calc(12vh + 12vw); } }
 
 @media (max-width: 640px) {
   .container .clockContainer .clock {
-    font-size: calc(8vh + 8vw); } }
+    font-size: calc(7.5vh + 7.5vw); } }
+
+@media (max-width: 640px) and (orientation: landscape) {
+  .container .clockContainer .clock {
+    font-size: calc(12vh + 12vw); } }
 
 @media (max-width: 412px) {
   .container .clockContainer .clock {
-    font-size: calc(7vh + 7vw); } }
+    font-size: calc(6.5vh + 6.5vw); } }
 
 .container form {
   margin-top: 2.5em;

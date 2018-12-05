@@ -37,12 +37,17 @@
   #mycontent
     position: relative
     #retry, #myprize
-      display: none
+      opacity: 0
+      //display: none
       position: absolute
       width: max-content
       top: .5em
       left: 50%
-      +transform(translateX(-50%))
+      //+transform(translateX(-50%))
+      transform-origin: left top
+      +prefix(transform, scale(1) translateX(-50%))
+      &.appear
+        +prefix(animation, appear 1500ms 2 alternate)
     #retry
       color: $red
     #myprize
@@ -62,6 +67,8 @@
 
 
 @media (max-width: $media5) and (orientation: landscape)
+  body
+    height: max-content
   .container
     width: 90%
     height: max-content
