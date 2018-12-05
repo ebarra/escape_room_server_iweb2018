@@ -4,6 +4,15 @@
   margin: 0 auto
   +column-flex
   justify-content: center
+  #volumeBtn
+    position: absolute
+    top: 1em
+    left: 1em
+    cursor: pointer
+    &:hover
+      +hover_scale_opacity
+    &.disable
+      opacity: .5
   .mainText
     width: 60%
     font-size: 1em

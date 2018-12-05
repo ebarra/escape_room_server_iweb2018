@@ -12,7 +12,6 @@ fetch('http://example.com/movies.json')
 
 window.addEventListener("load", function () {
 
-  //if (started) {
     function sendData(url) {
       var data = {};
       data.key = document.getElementById("mykey").value;
@@ -49,6 +48,27 @@ window.addEventListener("load", function () {
       sendData("/code");
     });
 
-  //};
+
+
+    //________________ AUDIOS __________________________
+
+    var MUSIC = true;
+    var countdown = new Audio('https://res.cloudinary.com/dvxsqwrwm/video/upload/v1544008518/countdown_reduce.mp3');
+    var tenSecs = new Audio('https://res.cloudinary.com/dbrbgqgfg/video/upload/v1544005322/tensecs_nhtj8r.mp3');
+
+    countdown.currentTime = 5;
+    countdown.play();
+
+    document.getElementById("volumeBtn").addEventListener('click', () => {
+      let sounds = [countdown, tenSecs];
+      sounds.map(sound => {
+        return sound.muted = MUSIC;
+      });
+      MUSIC = !MUSIC;
+      document.getElementById("volumeIcon").classList.toggle('fa-volume-up');
+      document.getElementById("volumeIcon").classList.toggle('fa-volume-off');
+      document.getElementById("volumeBtn").classList.toggle('disable');
+    });
+
 
 });

@@ -4,10 +4,12 @@ const crypto = require('crypto');
 const secret = 'ab';
 const code_length = 2; //number of characters that this app manages
 const {config} = require('../config/config');
-let started = true;
+var started = false;
+var chrono;
 
 /* GET home page */
 router.get('/', (req, res, next) => {
+  
   res.render('index', {started, config});
 });
 

@@ -1,6 +1,8 @@
 <div class="container">
 
   {{#if started}}
+    {{!-- VOLUME BUTTON --}}
+    <div id="volumeBtn"><span id="volumeIcon" class="fa fa-volume-up"></span></div>
 
     <div class="mainText">
       <h1>{{config.mainTitle}}</h1>
@@ -34,5 +36,7 @@
 </div>
 
 
-
-<script src="/javascripts/script.js"></script>
+{{#if started}}
+  <script src="/javascripts/close_window.js"></script>
+  <script src="/javascripts/main_page.js"></script>
+{{/if}}
