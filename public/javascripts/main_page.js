@@ -34,6 +34,9 @@ fetch('http://example.com/movies.json')
             //setTimeout(()=> {document.getElementById("retry").style.display = 'none'}, 2500);
             document.getElementById("retry").classList.add('appear');
             setTimeout(()=>{document.getElementById("retry").classList.remove('appear')}, 3000);
+            if(res.penalty){
+              applyPenalty(res.penalty);
+            }
           }
         } else {
           //console.log(res);

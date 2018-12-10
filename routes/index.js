@@ -7,6 +7,8 @@ const {config} = require('../config/config');
 var started = false;
 var start_time = new Date();
 
+
+
 /* GET home page */
 router.get('/', (req, res, next) => {
   ///calc remaining time
@@ -29,15 +31,30 @@ router.post('/admin', (req, res, next) => {
   res.redirect('/');
 });
 
-router.post('/code', function (req, res, next) {
-  const hash = crypto.createHmac('sha256', secret)
-    .update(req.body.key)
-    .digest('hex');
-  console.log(hash);
+router.get('/code', function (req, res, next) {
   res.json({
-    status: "ok",
-    code: hash.slice(-code_length)
+    status: "error",
+    message: "Has hecho un GET, debes hacer un POST"
   });
+});
+
+router.post('/code', function (req, res, next) {
+  //G8XX
+  if(true) {
+    const hash = crypto.createHmac('sha256', secret)
+      .update(req.body.key)
+      .digest('hex');
+    console.log(hash);
+    res.json({
+      status: "ok",
+      code: hash.slice(-code_length)
+    });
+  } else {
+    res.json({
+      status: "error",
+      message: 'Introduce tu código de pareja (debe empezar por G8 y contener 4 caracteres)'
+    });
+  }
 });
 
 router.post('/check', function (req, res, next) {
@@ -50,15 +67,19 @@ router.post('/check', function (req, res, next) {
     .digest('hex');
   //console.log(hash);
   const rightcode = hash.slice(-code_length);
+  //apuntar en la bbdd
+  //{ ip, key, code, hora, right, ...}
   if (code === rightcode) {
     res.json({
       status: "ok",
       message: 'Bien!'
     });
   } else {
+
     res.json({
       status: "error",
-      message: 'Mal!'
+      message: 'Mal!',
+      penalty: config.penaltySecs
     });
   }
 });

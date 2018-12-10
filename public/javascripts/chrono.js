@@ -1,5 +1,5 @@
 
-function chrono() {
+function chrono(stopQuickCountDown) {
   var seconds = Math.abs(rem_time);
 
   var secs = Math.floor(seconds % 60);
@@ -33,8 +33,29 @@ function chrono() {
   }
 
   rem_time--;
+  if(rem_time<stopQuickCountDown){
+    clearInterval(countdownChronoQuick);
+    countdownChrono = setInterval('chrono()', 1000);
+  }
+
+}
+
+//init penalty to 0
+if(localStorage && localStorage.penalty===undefined){
+  localStorage.penalty = 0;
+} else {
+  rem_time = rem_time - Number(localStorage.penalty);
 }
 
 chrono();
 
 var countdownChrono = setInterval('chrono()', 1000);
+var countdownChronoQuick;
+
+function applyPenalty(penalty){
+  //console.log("PENALIZACION anterior " + localStorage.penalty);
+  localStorage.penalty = Number(localStorage.penalty) + Number(penalty);
+  clearInterval(countdownChrono);
+  var stopQuickCountDown = rem_time - Number(penalty);
+  countdownChronoQuick = setInterval(()=>chrono(stopQuickCountDown), 10);
+}

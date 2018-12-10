@@ -11,12 +11,12 @@ const config = {
   feedback: `Código no válido, ¡sigue intentándolo!`,
   btnSend: `Desactivar`,
   win: `¡¡BOMBA DESACTIVADA!!`,
-  placeholder1: `Introduce tu clave`,
+  placeholder1: `Introduce tu clave (G8XX)`,
   placeholder2: `Introduce tu código`,
   repositoryText: `En este repositorio encontrarás el código para desactivar la bomba: `,
   boomRepository: `https://www.google.com`,
   help: `http://vishub.org/scormfiles/279.full`,
-  durationSecs: 10,
+  durationSecs: 400,
   penaltySecs: 120
 }
 
