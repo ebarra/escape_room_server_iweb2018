@@ -28,6 +28,7 @@ fetch('http://example.com/movies.json')
           if (res.status === "ok") {
             document.getElementById("myform").style.display = 'none';
             document.getElementById("myprize").style.display = 'block';
+            document.getElementById("myprize").style.opacity = '1';
           } else {
             //document.getElementById("retry").style.display = 'block';
             //setTimeout(()=> {document.getElementById("retry").style.display = 'none'}, 2500);
