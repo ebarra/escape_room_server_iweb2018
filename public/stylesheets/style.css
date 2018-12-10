@@ -2534,12 +2534,12 @@ p {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center; }
-  .container #volumeBtn {
+  .container #volumeBtn, .container #clueBtn {
     position: absolute;
     top: 1em;
-    left: 1em;
-    cursor: pointer; }
-    .container #volumeBtn:hover {
+    cursor: pointer;
+    font-size: 2em; }
+    .container #volumeBtn:hover, .container #clueBtn:hover {
       opacity: .7;
       -webkit-transform: scale(1.1, 1.1);
       -moz-transform: scale(1.1, 1.1);
@@ -2551,8 +2551,12 @@ p {
       -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
       -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
       -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
-    .container #volumeBtn.disable {
+    .container #volumeBtn.disable, .container #clueBtn.disable {
       opacity: .5; }
+  .container #volumeBtn {
+    left: 2.5em; }
+  .container #clueBtn {
+    left: 1em; }
   .container .mainText {
     width: 60%;
     font-size: 1em;

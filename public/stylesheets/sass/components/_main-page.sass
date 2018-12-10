@@ -4,15 +4,21 @@
   margin: 0 auto
   +column-flex
   justify-content: center
-  #volumeBtn
+  #volumeBtn, #clueBtn
     position: absolute
     top: 1em
-    left: 1em
     cursor: pointer
+    font-size: 2em
     &:hover
       +hover_scale_opacity
     &.disable
       opacity: .5
+  #volumeBtn
+    left: 2.5em
+  #clueBtn
+    left: 1em
+    //#clueIcon
+      //font-size: 2em
   .mainText
     width: 60%
     font-size: 1em

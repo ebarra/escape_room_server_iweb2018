@@ -45,7 +45,6 @@ fetch('http://example.com/movies.json')
       xhr.send(json);
     }
 
-
     document.getElementById("myform").addEventListener("submit", function (event) {
       event.preventDefault();
       sendData("/check");
@@ -84,6 +83,14 @@ fetch('http://example.com/movies.json')
       document.getElementById("volumeIcon").classList.toggle('fa-volume-up');
       document.getElementById("volumeIcon").classList.toggle('fa-volume-off');
       document.getElementById("volumeBtn").classList.toggle('disable');
+    });
+
+
+    //________________ CLEAN INPUTS __________________________
+
+    document.getElementById("deactivate").addEventListener('click', () => {
+      document.getElementById("mykey").value = "";
+      document.getElementById("mycode").value = "";
     });
 
 

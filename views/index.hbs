@@ -4,13 +4,15 @@
     {{!-- VOLUME BUTTON --}}
     <div id="volumeBtn"><span id="volumeIcon" class="fa fa-volume-up"></span></div>
 
+    {{!-- CLUE BUTTON --}}
+    <div id="clueBtn"><a href="http://vishub.org/scormfiles/279.full" target="_blank"><span id="clueIcon" class="fa fa-question-circle"></span> {{!-- ¿Necesitas ayuda? --}} </a></div>
+
     <div class="mainText">
       <h1>{{config.mainTitle}}</h1>
       <p>{{config.mainText}}</p>
       <p class="repository">{{config.repositoryText}}<a class="" target="_blank" href="{{config.boomRepository}}">GitHub</a></p>
     </div>
     {{> clock}}
-
     <div id="mycontent">
 
       <p id="retry">{{config.feedback}}</p>
@@ -19,15 +21,13 @@
       <form id="myform" method="POST" action="/check">
         <input id="mykey" type="text" name="key" placeholder="{{config.placeholder1}}"/>
         <input id="mycode" type="text" name="code" placeholder="{{config.placeholder2}}"/>
-        <button class="sendBtn" type="submit">{{config.btnSend}}</button>
+        <button class="sendBtn" id="deactivate" type="submit">{{config.btnSend}}</button>
       </form>
     </div>
 
     <button id="mytest" type="button" style="visibility:hidden;">Get Code</button>
 
   {{else}}
-
-  {{!-- http://vishub.org/scormfiles/279.full --}}
 
     <div class="mainText centered neoned">
       <h1>{{config.noStarted}}</h1>

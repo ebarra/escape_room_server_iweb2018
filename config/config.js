@@ -16,6 +16,8 @@ const config = {
   repositoryText: `En este repositorio encontrarás el código para desactivar la bomba: `,
   boomRepository: `https://www.google.com`,
   help: `http://vishub.org/scormfiles/279.full`,
+  secret: 'ab',
+  codeLength: 8,
   durationSecs: 400,
   penaltySecs: 120
 }
