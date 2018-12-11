@@ -2554,9 +2554,9 @@ p {
     .container #volumeBtn.disable, .container #clueBtn.disable {
       opacity: .5; }
   .container #volumeBtn {
-    left: 2.5em; }
+    right: 2.5em; }
   .container #clueBtn {
-    left: 1em; }
+    right: 1em; }
   .container .mainText {
     width: 60%;
     font-size: 1em;
@@ -2753,7 +2753,7 @@ p {
 
 @media (max-width: 640px) {
   .container .clockContainer .clock {
-    font-size: calc(7.5vh + 7.5vw); } }
+    font-size: calc(7vh + 7vw); } }
 
 @media (max-width: 640px) and (orientation: landscape) {
   .container .clockContainer .clock {

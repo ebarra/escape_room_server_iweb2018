@@ -69,7 +69,7 @@ router.post('/check', function (req, res, next) {
   var key = req.body.key;
   var code = req.body.code;
   var right = undefined;
-  var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   //console.log("PIDE CODIGO de ", key, code);
   const hash = crypto.createHmac('sha256', secret)
     .update(key)
