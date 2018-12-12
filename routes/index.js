@@ -77,11 +77,6 @@ router.post('/check', function (req, res, next) {
       await client.connect();
       console.log("Connected correctly to server");
       const db = client.db(dbName);
-      console.log(config.durationSecs)
-      console.log(diff/1000)
-      console.log(penalty)
-      console.log(rem_time)
-      console.log('******************')
       let attempt = await db.collection('attempts').insertOne(
         {
           ip,
