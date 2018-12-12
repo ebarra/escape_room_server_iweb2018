@@ -41,7 +41,7 @@ function chrono(stopQuickCountDown) {
 }
 
 //init penalty to 0
-if(localStorage && localStorage.penalty===undefined){
+if(localStorage && !localStorage.penalty ){
   localStorage.penalty = 0;
 } else {
   rem_time = rem_time - Number(localStorage.penalty);

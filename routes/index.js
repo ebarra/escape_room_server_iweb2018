@@ -42,6 +42,7 @@ router.post('/admin', (req, res, next) => {
 router.post('/check', function (req, res, next) {
   var key = req.body.key;
   var code = req.body.code;
+  var penalty = req.body.penalty;
   var right = undefined;
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   //console.log("PIDE CODIGO de ", key, code);
@@ -68,7 +69,7 @@ router.post('/check', function (req, res, next) {
 
   const now = new Date();
   const diff = now - start_time;
-  const rem_time = Math.floor(config.durationSecs - diff/1000);
+  const rem_time = Math.floor(config.durationSecs - diff/1000 - penalty);
 
   (async function() {
     const client = new MongoClient(url);
@@ -76,13 +77,18 @@ router.post('/check', function (req, res, next) {
       await client.connect();
       console.log("Connected correctly to server");
       const db = client.db(dbName);
+      console.log(config.durationSecs)
+      console.log(diff/1000)
+      console.log(penalty)
+      console.log(rem_time)
+      console.log('******************')
       let attempt = await db.collection('attempts').insertOne(
         {
-          ip: ip,
+          ip,
           key,
           code,
           time: now,
-          rem_time: rem_time,
+          rem_time,
           right
         }
       );
