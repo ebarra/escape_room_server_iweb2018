@@ -16,6 +16,7 @@ fetch('http://example.com/movies.json')
       var data = {};
       data.key = document.getElementById("mykey").value;
       data.code = document.getElementById("mycode").value;
+      data.penalty = Number(localStorage.penalty || 0);
       var json = JSON.stringify(data);
 
       var xhr = new XMLHttpRequest();
