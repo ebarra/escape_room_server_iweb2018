@@ -39,7 +39,7 @@ fetch('http://example.com/movies.json')
             }
           }
         } else {
-          //console.log(res);
+          console.log(res);
         }
       }
       xhr.send(json);
@@ -51,7 +51,7 @@ fetch('http://example.com/movies.json')
     });
 
     document.getElementById("mytest").addEventListener("click", function (event) {
-      sendData("/code");
+      sendData("http://localhost:6035/code");
     });
 
 

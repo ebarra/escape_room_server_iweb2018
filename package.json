@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",
+    "code_app": "node ./bin/www_code_app",
     "dev": "DEBUG=escape-room-server:* nodemon -e hbs,js ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
