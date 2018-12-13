@@ -6,7 +6,7 @@ const config = {
   btnStopAdmin: `Stop`,
   mainTitle: `Escape Room IWEB 2018`,
   mainText: `Si quieres volver a ver el vídeo del profesor haz click en este link:`,
-  videoLink: 'https://www.youtube.com/embed/ntYmjOaDJCk',
+  videoLink: 'https://www.youtube.com/embed/oOPEryIYkm4',
   videoPage: './video',
   feedback: `Código no válido, ¡sigue intentándolo!`,
   btnSend: `Desactivar`,
