@@ -20,7 +20,7 @@ const config = {
   help: `http://vishub.org/scormfiles/280.full`,
   secret: 'ab',
   codeLength: 8,
-  durationSecs: 400,
+  durationSecs: 7200,
   penaltySecs: 120
 }
 

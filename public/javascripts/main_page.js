@@ -90,7 +90,7 @@ fetch('http://example.com/movies.json')
     //________________ CLEAN INPUTS __________________________
 
     document.getElementById("deactivate").addEventListener('click', () => {
-      document.getElementById("mykey").value = "";
+      //document.getElementById("mykey").value = "";
       document.getElementById("mycode").value = "";
     });
 
