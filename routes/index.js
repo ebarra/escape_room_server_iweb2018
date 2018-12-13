@@ -30,6 +30,11 @@ router.get('/admin', (req, res, next) => {
   res.render('admin', {started, config});
 });
 
+/* video page */
+router.get('/video', (req, res, next) => {
+  res.render('video', {config});
+});
+
 router.post('/admin', (req, res, next) => {
   if(req.body.adminPassword === process.env.CODE) {
     started = !started;

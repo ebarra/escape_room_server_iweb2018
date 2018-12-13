@@ -2490,11 +2490,11 @@ p {
 
 .responsive_video {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 50%;
   height: 0;
   width: 100%;
   height: 100%;
-  margin: 1em auto; }
+  margin: 0 auto; }
   .responsive_video iframe {
     position: absolute;
     top: 0;

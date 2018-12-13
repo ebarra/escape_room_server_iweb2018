@@ -5,9 +5,9 @@ const config = {
   btnSendAdmin: `Start`,
   btnStopAdmin: `Stop`,
   mainTitle: `Escape Room IWEB 2018`,
-  mainText: `Lorem fistrum está la cosa muy malar se calle ustée jarl diodenoo ese que llega no te digo trigo por no llamarte Rodrigor apetecan a wan,
-  La caidita no puedor fistro qué dise usteer al ataquerl. Tiene musho peligro fistro amatomaa la caidita por la gloria de mi madre papaar papaar llevame al sircoo a peich.
-  Se calle ustée por la gloria de mi madre.`,
+  mainText: `Si quieres volver a ver el vídeo del profesor haz click en este link:`,
+  videoLink: 'https://www.youtube.com/embed/ntYmjOaDJCk',
+  videoPage: './video',
   feedback: `Código no válido, ¡sigue intentándolo!`,
   btnSend: `Desactivar`,
   surveyText: `Por favor, al terminar rellena esta <a target="_blank"  href="https://docs.google.com/forms/d/e/1FAIpQLSeKIpymfdCTF7-NRS56jgtPpnJS8JcAkncrjsUJWe5V90DInA/viewform">ENCUESTA</a> para conocer tu opinión sobre la actividad.`,
