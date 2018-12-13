@@ -16,6 +16,7 @@ fetch('http://example.com/movies.json')
       var data = {};
       data.key = document.getElementById("mykey").value;
       data.code = document.getElementById("mycode").value;
+      data.penalty = Number(localStorage.penalty || 0);
       var json = JSON.stringify(data);
 
       var xhr = new XMLHttpRequest();
@@ -39,7 +40,7 @@ fetch('http://example.com/movies.json')
             }
           }
         } else {
-          //console.log(res);
+          console.log(res);
         }
       }
       xhr.send(json);
@@ -51,7 +52,7 @@ fetch('http://example.com/movies.json')
     });
 
     document.getElementById("mytest").addEventListener("click", function (event) {
-      sendData("/code");
+      sendData("http://localhost:6035/code");
     });
 
 
@@ -89,7 +90,7 @@ fetch('http://example.com/movies.json')
     //________________ CLEAN INPUTS __________________________
 
     document.getElementById("deactivate").addEventListener('click', () => {
-      document.getElementById("mykey").value = "";
+      //document.getElementById("mykey").value = "";
       document.getElementById("mycode").value = "";
     });
 

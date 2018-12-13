@@ -2490,11 +2490,11 @@ p {
 
 .responsive_video {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 50%;
   height: 0;
   width: 100%;
   height: 100%;
-  margin: 1em auto; }
+  margin: 0 auto; }
   .responsive_video iframe {
     position: absolute;
     top: 0;
@@ -2584,9 +2584,7 @@ p {
         left: 0;
         width: 100%;
         height: 100%;
-        background: #39FF14;
-        opacity: .4;
-        filter: blur(60px); }
+        opacity: .4; }
     .container .mainText .repository {
       margin-top: 1em; }
   .container #mycontent {
@@ -2613,6 +2611,8 @@ p {
       color: #F25652; }
     .container #mycontent #myprize {
       color: #00a388; }
+  .container #mytest {
+    display: none; }
 
 @media (max-width: 1280px) and (orientation: landscape) {
   .container .mainText {
@@ -2663,9 +2663,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #39FF14;
-    opacity: .4;
-    filter: blur(60px); }
+    opacity: .4; }
 
 @media (max-width: 1366px) {
   .container .message {
@@ -2689,7 +2687,7 @@ p {
     font-family: Digital;
     font-weight: bold;
     font-size: calc(11.5vh + 11.5vw);
-    text-shadow: 0 0 10px #39FF14;
+    text-shadow: 0 0 60px #39FF14;
     z-index: 0; }
     .container .clockContainer .clock #minus {
       display: none; }
@@ -2705,26 +2703,13 @@ p {
         left: 0;
         z-index: -1;
         color: #39FF14;
-        filter: blur(15px);
         animation: neon 1000ms ease-in-out infinite alternate;
         -webkit-animation: neon 1000ms ease-in-out infinite alternate;
         -moz-animation: neon 1000ms ease-in-out infinite alternate;
         -ms-animation: neon 1000ms ease-in-out infinite alternate;
         -o-animation: neon 1000ms ease-in-out infinite alternate; }
-    .container .clockContainer .clock:before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #39FF14;
-      z-index: -2;
-      opacity: .2;
-      filter: blur(50px); }
     .container .clockContainer .clock.red {
-      text-shadow: 0 0 10px #F25652; }
+      text-shadow: 0 0 60px #F25652; }
       .container .clockContainer .clock.red span:after {
         color: #F25652;
         animation: neonRed 1000ms ease-in-out infinite alternate;

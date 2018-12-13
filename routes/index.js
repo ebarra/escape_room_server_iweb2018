@@ -30,6 +30,11 @@ router.get('/admin', (req, res, next) => {
   res.render('admin', {started, config});
 });
 
+/* video page */
+router.get('/video', (req, res, next) => {
+  res.render('video', {config});
+});
+
 router.post('/admin', (req, res, next) => {
   if(req.body.adminPassword === process.env.CODE) {
     started = !started;
@@ -38,36 +43,11 @@ router.post('/admin', (req, res, next) => {
   res.redirect('/');
 });
 
-router.get('/code', function (req, res, next) {
-  res.json({
-    status: "error",
-    message: "Has hecho un GET, debes hacer un POST"
-  });
-});
-
-router.post('/code', function (req, res, next) {
-  const key = req.body.key;
-  //if(key[0] === 'G' || key[0] === 'g' && key[1] === '8' && key.length === 4) {
-  if(key.match(/\bG8[a-zA-Z]*/gi) && key.length === 4) {
-    const hash = crypto.createHmac('sha256', secret)
-      .update(key)
-      .digest('hex');
-    console.log(hash);
-    res.json({
-      status: "ok",
-      code: hash.slice(-code_length)
-    });
-  } else {
-    res.json({
-      status: "error",
-      message: 'Introduce tu código de pareja (debe empezar por G8 y contener 4 caracteres)'
-    });
-  }
-});
 
 router.post('/check', function (req, res, next) {
   var key = req.body.key;
   var code = req.body.code;
+  var penalty = req.body.penalty;
   var right = undefined;
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   //console.log("PIDE CODIGO de ", key, code);
@@ -94,7 +74,7 @@ router.post('/check', function (req, res, next) {
 
   const now = new Date();
   const diff = now - start_time;
-  const rem_time = Math.floor(config.durationSecs - diff/1000);
+  const rem_time = Math.floor(config.durationSecs - diff/1000 - penalty);
 
   (async function() {
     const client = new MongoClient(url);
@@ -104,11 +84,11 @@ router.post('/check', function (req, res, next) {
       const db = client.db(dbName);
       let attempt = await db.collection('attempts').insertOne(
         {
-          ip: ip,
+          ip,
           key,
           code,
           time: now,
-          rem_time: rem_time,
+          rem_time,
           right
         }
       );
