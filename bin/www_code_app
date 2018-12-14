@@ -48,7 +48,7 @@ server.on('error', error => {
 
 
 const port = process.env.CODE_PORT;
-app.listen(port, () => console.log(`Listening on http://localhost:${port}`))
+app.listen(port, "0.0.0.0", () => console.log(`Listening on http://localhost:${port}`))
 .on('error', (e) => {
   console.log('Error', e);
   app.listen(Number(port) + 1, () => console.log(`Listening on http://localhost:${Number(port)+1}`));

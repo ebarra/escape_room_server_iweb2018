@@ -34,6 +34,7 @@ fetch('http://example.com/movies.json')
             //setTimeout(()=> {document.getElementById("retry").style.display = 'none'}, 2500);
             document.getElementById("retry").classList.add('appear');
             setTimeout(()=>{document.getElementById("retry").classList.remove('appear')}, 3000);
+
             if(res.penalty){
               applyPenalty(res.penalty);
             }
@@ -43,6 +44,9 @@ fetch('http://example.com/movies.json')
         }
       }
       xhr.send(json);
+      //CLEAN INPUTS
+      document.getElementById("mykey").value = "";
+      document.getElementById("mycode").value = "";
     }
 
     document.getElementById("myform").addEventListener("submit", function (event) {
@@ -86,12 +90,7 @@ fetch('http://example.com/movies.json')
     });
 
 
-    //________________ CLEAN INPUTS __________________________
 
-    document.getElementById("deactivate").addEventListener('click', () => {
-      document.getElementById("mykey").value = "";
-      document.getElementById("mycode").value = "";
-    });
 
 
 //});

@@ -42,6 +42,8 @@ router.post('/admin', (req, res, next) => {
 router.post('/check', function (req, res, next) {
   var key = req.body.key;
   var code = req.body.code;
+  console.log("CODE: ", code);
+  
   var right = undefined;
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   //console.log("PIDE CODIGO de ", key, code);
