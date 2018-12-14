@@ -17,7 +17,7 @@ const config = {
   placeholder2: `Introduce tu código`,
   repositoryText: `En este repositorio encontrarás el código para desactivar la bomba: `,
   boomRepository: `https://github.com/ging/escape_room_iweb_2018`,
-  help: `http://vishub.org/scormfiles/282.full`,
+  help: `http://vishub.org/scormfiles/284.full`,
   secret: 'ab',
   codeLength: 8,
   durationSecs: 7200,
