@@ -5,18 +5,23 @@
     <div id="volumeBtn"><span id="volumeIcon" class="fa fa-volume-up"></span></div>
 
     {{!-- CLUE BUTTON --}}
-    <div id="clueBtn"><a href="http://vishub.org/scormfiles/279.full" target="_blank"><span id="clueIcon" class="fa fa-question-circle"></span> {{!-- ¿Necesitas ayuda? --}} </a></div>
+    <div id="clueBtn"><a href="{{config.help}}" target="_blank"><span id="clueIcon" class="fa fa-question-circle"></span> {{!-- ¿Necesitas ayuda? --}} </a></div>
 
     <div class="mainText">
       <h1>{{config.mainTitle}}</h1>
-      <p>{{config.mainText}}</p>
-      <p class="repository">{{config.repositoryText}}<a class="" target="_blank" href="{{config.boomRepository}}">GitHub</a></p>
+      <p>{{config.mainText}} <a href="{{config.videoPage}}" target="_blank">vídeo</a>.</p>
+      <p class="repository">{{config.repositoryText}}<a class="" target="_blank" href="{{config.boomRepository}}">github</a>.</p>
+      <br/>
+      <p>{{config.surveyText}} <a target="_blank" href="{{config.surveyLink}}">encuesta</a>.</p>
     </div>
     {{> clock}}
     <div id="mycontent">
 
       <p id="retry">{{config.feedback}}</p>
-      <p id="myprize">{{config.win}}</p>
+      <p id="myprize">{{config.win}}
+      <br/>
+
+      </p>
 
       <form id="myform" method="POST" action="/check">
         <input id="mykey" type="text" name="key" placeholder="{{config.placeholder1}}"/>

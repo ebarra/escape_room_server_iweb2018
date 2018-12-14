@@ -16,6 +16,7 @@ fetch('http://example.com/movies.json')
       var data = {};
       data.key = document.getElementById("mykey").value;
       data.code = document.getElementById("mycode").value;
+      data.penalty = Number(localStorage.penalty || 0);
       var json = JSON.stringify(data);
 
       var xhr = new XMLHttpRequest();
@@ -88,7 +89,6 @@ fetch('http://example.com/movies.json')
       document.getElementById("volumeIcon").classList.toggle('fa-volume-off');
       document.getElementById("volumeBtn").classList.toggle('disable');
     });
-
 
 
 

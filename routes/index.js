@@ -30,6 +30,11 @@ router.get('/admin', (req, res, next) => {
   res.render('admin', {started, config});
 });
 
+/* video page */
+router.get('/video', (req, res, next) => {
+  res.render('video', {config});
+});
+
 router.post('/admin', (req, res, next) => {
   if(req.body.adminPassword === process.env.CODE) {
     started = !started;
@@ -42,8 +47,7 @@ router.post('/admin', (req, res, next) => {
 router.post('/check', function (req, res, next) {
   var key = req.body.key;
   var code = req.body.code;
-  console.log("CODE: ", code);
-  
+  var penalty = req.body.penalty;
   var right = undefined;
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   //console.log("PIDE CODIGO de ", key, code);
@@ -70,7 +74,7 @@ router.post('/check', function (req, res, next) {
 
   const now = new Date();
   const diff = now - start_time;
-  const rem_time = Math.floor(config.durationSecs - diff/1000);
+  const rem_time = Math.floor(config.durationSecs - diff/1000 - penalty);
 
   (async function() {
     const client = new MongoClient(url);
@@ -80,11 +84,11 @@ router.post('/check', function (req, res, next) {
       const db = client.db(dbName);
       let attempt = await db.collection('attempts').insertOne(
         {
-          ip: ip,
+          ip,
           key,
           code,
           time: now,
-          rem_time: rem_time,
+          rem_time,
           right
         }
       );
