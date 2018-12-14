@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const {config} = require('../config/config');
 const secret = config.secret;
 const code_length = config.codeLength; //number of characters that this app manages
-var started = true;
+var started = false;
 var start_time = new Date();
 
 const path = require('path');
