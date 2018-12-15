@@ -19,6 +19,7 @@ code_app.use(cors());
 code_app.use(logger('dev'));
 code_app.use(bodyParser.urlencoded({extended: false})); // support encoded bodies
 code_app.use(bodyParser.json()); // support json encoded bodies
+code_app.use(bodyParser.text()); // support json encoded bodies
 
 
 const indexRoutesCodeApp = require('./routes/index_code_app');

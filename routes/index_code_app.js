@@ -24,10 +24,18 @@ router.get('/code', function (req, res, next) {
 });
 
 router.post('/code', function (req, res, next) {
-  const key = req.body.key;
+  let key = req.body.key;
+  console.log("REQ.body: ", req.body);
   console.log("CODE requested for key: " + key);
-  //if(key[0] === 'G' || key[0] === 'g' && key[1] === '8' && key.length === 4) {
-  if(key.match(/\bG8[a-zA-Z]*/gi) && key.length === 4) {
+  if(key===undefined){
+    //maybe sent as text/plain with json or something inside.
+    //lets get the group code g8XX
+    let pos = req.body.toLocaleLowerCase().indexOf("g8");
+    if(pos>0){
+        key = req.body.substr(pos, 4);
+    }
+  }
+  if(key!==undefined && key.match(/\bG8[a-zA-Z]*/gi) && key.length === 4) {
     const hash = crypto.createHmac('sha256', secret)
       .update(key)
       .digest('hex');
