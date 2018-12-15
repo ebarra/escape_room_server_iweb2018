@@ -27,7 +27,7 @@ router.post('/code', function (req, res, next) {
   let key = req.body.key;
   console.log("REQ.body: ", req.body);
   console.log("CODE requested for key: " + key);
-  if(key===undefined){
+  if(key===undefined && req.body!==undefined){
     //maybe sent as text/plain with json or something inside.
     //lets get the group code g8XX
     let pos = req.body.toLocaleLowerCase().indexOf("g8");
